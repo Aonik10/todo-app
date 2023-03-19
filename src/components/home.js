@@ -18,6 +18,8 @@ import starFilled from "../images/star-filled.svg";
 import trash from "../images/trash.svg";
 import dots from "../images/dots-vertical.svg";
 import bell from "../images/bell.svg";
+import cross from "../images/cross.svg";
+import check from "../images/check.svg";
 
 function Home() {
     // ROUTER LOCATION HOOKS
@@ -127,7 +129,7 @@ function Home() {
                 <button className="bell-btn icon-btn">
                     <img src={bell} alt="bell btn" />
                 </button>
-                <div>{date}</div>
+                <div className="topper-date">{date}</div>
                 <div
                     className="profile hide-profile"
                     onClick={() => dispatch(setResume(!displayResume))}
@@ -136,24 +138,32 @@ function Home() {
                 </div>
             </header>
             <section className="tasks-section">
-                <h1>
+                <h1 className="tasks-section-title">
                     {(location !== "Todo-app" ? location : "All") +
                         " tasks " +
                         tasks.length}
                 </h1>
                 <div className="format-tasks">
-                    <button className="icon-btn">
+                    <button
+                        className={
+                            "icon-btn" + (gridView ? "" : " active-btn-color")
+                        }
+                    >
                         <img
                             src={list}
                             alt="list btn"
-                            onClick={() => setGridView(!gridView)}
+                            onClick={() => setGridView(false)}
                         />
                     </button>
-                    <button className="icon-btn">
+                    <button
+                        className={
+                            "icon-btn" + (gridView ? " active-btn-color" : "")
+                        }
+                    >
                         <img
                             src={grid}
                             alt="grid btn"
-                            onClick={() => setGridView(!gridView)}
+                            onClick={() => setGridView(true)}
                         />
                     </button>
                     <select
@@ -214,49 +224,67 @@ function Home() {
                                                 })
                                             }
                                         >
-                                            {task.completed
-                                                ? "completed"
-                                                : "uncompleted"}
-                                        </button>
-                                        <button
-                                            className={
-                                                "btn-mark-as-important icon-btn" +
-                                                (task.important
-                                                    ? " important-active"
-                                                    : "")
-                                            }
-                                            onClick={() =>
-                                                handleFavourite({
-                                                    id: task.id,
-                                                    status: !task.important,
-                                                })
-                                            }
-                                        >
+                                            <div>
+                                                {task.completed
+                                                    ? "completed"
+                                                    : "uncompleted"}
+                                            </div>
                                             <img
                                                 src={
-                                                    task.important
-                                                        ? starFilled
-                                                        : star
+                                                    task.completed
+                                                        ? check
+                                                        : cross
                                                 }
-                                                alt="important btn"
+                                                alt="check-cross-imgs"
                                             />
                                         </button>
-                                        <button
-                                            className="btn-mark-as-completed icon-btn"
-                                            onClick={() =>
-                                                handleDelete(task.id)
-                                            }
-                                        >
-                                            <img src={trash} alt="trash btn" />
-                                        </button>
-                                        <button
-                                            className="btn-delete-task icon-btn"
-                                            onClick={() =>
-                                                dispatch(openForm(task.id))
-                                            }
-                                        >
-                                            <img src={dots} alt="dots btn" />
-                                        </button>
+                                        <div className="card-icon-btns">
+                                            <button
+                                                className={
+                                                    "btn-mark-as-important icon-btn" +
+                                                    (task.important
+                                                        ? " important-active"
+                                                        : "")
+                                                }
+                                                onClick={() =>
+                                                    handleFavourite({
+                                                        id: task.id,
+                                                        status: !task.important,
+                                                    })
+                                                }
+                                            >
+                                                <img
+                                                    src={
+                                                        task.important
+                                                            ? starFilled
+                                                            : star
+                                                    }
+                                                    alt="important btn"
+                                                />
+                                            </button>
+                                            <button
+                                                className="btn-mark-as-completed icon-btn"
+                                                onClick={() =>
+                                                    handleDelete(task.id)
+                                                }
+                                            >
+                                                <img
+                                                    src={trash}
+                                                    alt="trash btn"
+                                                />
+                                            </button>
+                                            <button
+                                                className="btn-delete-task icon-btn"
+                                                onClick={() =>
+                                                    dispatch(openForm(task.id))
+                                                }
+                                            >
+                                                <img
+                                                    src={dots}
+                                                    alt="dots btn"
+                                                />
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             ) : (

@@ -24,7 +24,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./build
-          
+
   # Deploy job
   deploy:
     # Add a dependency to the build job
@@ -46,4 +46,6 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
-          
+
+#https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+#ci --> continuous integration          

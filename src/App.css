@@ -1,3 +1,7 @@
+html {
+	overflow: hidden;
+}
+
 .theme {
 	margin: 0;
 	font-size: 18px;
@@ -236,6 +240,11 @@ a > div {
 .task-mark-delete-edit {
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
+}
+
+.card-icon-btns {
+	display: flex;
 }
 
 .task-description-date {
@@ -252,6 +261,17 @@ a > div {
 	height: 30px;
 	border-radius: 20px;
 	margin-right: 10px;
+	transition: all 500ms;
+}
+
+.btn-status > img {
+	visibility: hidden;
+	width: 15px;
+	height: 15px;
+}
+
+.btn-status > div {
+	margin-top: 6px;
 }
 
 .completed {
@@ -272,6 +292,10 @@ a > div {
 	padding: 0;
 	margin-right: 10px;
 	transition: all 500ms;
+}
+
+.active-btn-color {
+	filter: invert(9%) sepia(98%) saturate(7497%) hue-rotate(275deg) brightness(86%) contrast(113%);
 }
 
 .icon-btn > img {
@@ -556,6 +580,7 @@ a > div {
 @media only screen and (max-width: 900px) {
 
 	.hide-profile {
+		margin-top: 0;
 		position: relative;
 		cursor: pointer;
 		z-index: 1;
@@ -580,6 +605,85 @@ a > div {
 		right: 3%;
 		transform: scale(1.5);
 		z-index: 1;
+	}
+
+}
+
+@media only screen and (max-width: 575px) {
+
+	.task-topper {
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	.hamburger-btn-task-filter {
+		margin-right: auto;
+	}
+
+	.topper-search-bar {
+		order: 1;
+		min-width: 320px;
+		width: auto;
+		display: flex
+	}
+
+	.topper-search-bar > input {
+		width: auto;
+		margin: 10px 0 0;
+		flex: 1;
+	}
+
+	.tasks-section-title, .task-card-title {
+		font-size: 16px;
+	}
+
+	.task-card-description-grid, .task-card-date {
+		font-size: 14px;
+	}
+
+	.format-tasks > .icon-btn > img {
+		width: 20px;
+		height: 20px;
+	}
+
+	.topper-input {
+		font-size: 14px;
+		height: 40px;
+	}
+
+	.task-card {
+		min-width: 180px;
+	}
+
+	.all-task-cards-grid {
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		column-gap: 20px;
+	}
+
+	.task-description-date {
+		min-width: 170px;
+	}
+
+	.btn-status {
+		width: 30px;
+		display: flex;
+		flex-direction: row-reverse;
+		align-items: center;
+		position: relative;
+	}
+
+	.btn-status > img {
+		visibility: visible;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	
+	.btn-status > div {
+		margin: 0;
+		visibility: hidden;
+		order: 1
 	}
 
 }
