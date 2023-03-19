@@ -23,14 +23,14 @@ const TaskResume = () => {
     const pendingTaskPerc = getTotalTasks()[1]; // esta logica no me gusta mucho REVISAR
 
     return (
-        <div className={"task-resume" + (displayResume ? "" : " resume-on")}>
+        <div className={"task-resume" + (displayResume ? " resume-on" : "")}>
             <div className="profile">
                 <h1>Hi, User!</h1>
                 <img src={require("../images/jinx.jpg")} alt="" />
                 <button
                     className={
                         "icon-btn arrow-btn" +
-                        (displayResume ? "" : " resume-on")
+                        (displayResume ? " resume-on" : "")
                     }
                 >
                     <img

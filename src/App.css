@@ -1,5 +1,6 @@
-html {
-	overflow: hidden;
+body {
+	overflow-x: hidden;
+	width: 100vw
 }
 
 .theme {
@@ -45,6 +46,9 @@ html {
 	display: flex;
 	justify-content: space-between;
 	height: 100vh;
+	position: relative;
+	width: 100vw;
+	overflow-x: hidden;
 }
 
 .App > div {
@@ -589,16 +593,14 @@ a > div {
 	.task-resume {
 		position: absolute;
 		height: 100vh;
-		z-index: -1;
-		right: 0%;
+		z-index: 1;
+		right: 0;
 		transform: translateX(100%);
-		transition: all 500ms !important
+		transition: transform 500ms !important
 	}	
 
 	.resume-on {
-		z-index: 1;
 		transform: translateX(0);
-		transition: transform 500ms !important
 	}
 
 	.arrow-btn {
