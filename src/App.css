@@ -40,9 +40,9 @@
 .App {
 	display: flex;
 	justify-content: space-between;
-	height: 100vh;
+	min-height: 100vh;
 	position: relative;
-	width: 100vw;
+	width: 100%;
 	overflow-x: hidden;
 }
 
@@ -186,7 +186,7 @@ a > div {
 .all-task-cards-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-	grid-template-rows: 200px 200px 200px;
+	grid-auto-rows: 1fr;
 	column-gap: 20px;
 	row-gap: 20px;
 }
@@ -611,6 +611,10 @@ a > div {
 
 @media only screen and (max-width: 575px) {
 
+	.tasks-main-menu {
+		padding: 10px;
+	}
+
 	.task-topper {
 		flex-wrap: wrap;
 		justify-content: space-between;
@@ -684,6 +688,10 @@ a > div {
 		margin: 0;
 		visibility: hidden;
 		order: 1
+	}
+
+	.list-add {
+		height: 91px;
 	}
 
 }
