@@ -140,7 +140,9 @@ function Home() {
             <section className="tasks-section">
                 <h1 className="tasks-section-title">
                     {console.log(location)}
-                    {(location === "Todo-app" ? "All" : location) +
+                    {(location === "Todo-app" || location === "Todo-app/"
+                        ? "All"
+                        : location) +
                         " tasks " +
                         tasks.length}
                 </h1>
