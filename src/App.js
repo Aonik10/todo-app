@@ -5,12 +5,12 @@ import ModalForm from "./components/ModalForm";
 import Home from "./components/home";
 import { useSelector } from "react-redux";
 import {
-    createBrowserRouter,
+    createHashRouter,
     RouterProvider,
     useLocation,
 } from "react-router-dom";
 
-const router = createBrowserRouter(
+const router = createHashRouter(
     [
         { path: "/", element: main(<Home />) },
         { path: "/today", element: main(<Home />) },
@@ -18,7 +18,7 @@ const router = createBrowserRouter(
         { path: "/completed", element: main(<Home />) },
         { path: "/uncompleted", element: main(<Home />) },
     ],
-    { basename: "/todo-app" }
+    { path: "/*" }
 );
 
 function main(component) {
