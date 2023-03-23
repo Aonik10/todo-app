@@ -10,13 +10,16 @@ import {
     useLocation,
 } from "react-router-dom";
 
-const router = createBrowserRouter([
-    { path: "/todo-app", element: main(<Home />) },
-    { path: "/today", element: main(<Home />) },
-    { path: "/important", element: main(<Home />) },
-    { path: "/completed", element: main(<Home />) },
-    { path: "/uncompleted", element: main(<Home />) },
-]);
+const router = createBrowserRouter(
+    [
+        { path: "/", element: main(<Home />) },
+        { path: "/today", element: main(<Home />) },
+        { path: "/important", element: main(<Home />) },
+        { path: "/completed", element: main(<Home />) },
+        { path: "/uncompleted", element: main(<Home />) },
+    ],
+    { basename: "/todo-app" }
+);
 
 function main(component) {
     return <AppContent>{component}</AppContent>;

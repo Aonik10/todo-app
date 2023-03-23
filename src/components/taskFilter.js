@@ -33,7 +33,7 @@ function TaskFilter() {
                 Add new task
             </button>
             <TaskFilterItem id="today" title="Today's" />
-            <TaskFilterItem id="todo-app" title="All" />
+            <TaskFilterItem id="" title="All" />
             <TaskFilterItem id="important" title="Important" />
             <TaskFilterItem id="completed" title="Completed" />
             <TaskFilterItem id="uncompleted" title="Uncompleted" />
