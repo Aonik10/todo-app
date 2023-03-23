@@ -139,7 +139,8 @@ function Home() {
             </header>
             <section className="tasks-section">
                 <h1 className="tasks-section-title">
-                    {(location !== "Todo-app" ? location : "All") +
+                    {console.log(location)}
+                    {(location === "Todo-app" ? "All" : location) +
                         " tasks " +
                         tasks.length}
                 </h1>
