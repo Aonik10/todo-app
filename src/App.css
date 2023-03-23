@@ -421,7 +421,7 @@ a > div {
 	width: 100%;
 	backdrop-filter: blur(2px);
 	color: var(--font-color);
-	z-index: 1;
+	z-index: 2;
 }
 
 .modal-section {
@@ -623,14 +623,22 @@ a > div {
 		justify-content: space-between;
 	}
 
+	.task-topper > button > img {
+		width: 18px;
+		height: 18px;
+	}
+
+	.topper-date {
+		font-size: 16px;
+	}
+
 	.hamburger-btn-task-filter {
 		margin-right: auto;
 	}
 
 	.topper-search-bar {
 		order: 1;
-		min-width: 320px;
-		width: auto;
+		width: 400px;
 		display: flex
 	}
 
@@ -663,8 +671,9 @@ a > div {
 	}
 
 	.all-task-cards-grid {
-		grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+		grid-template-columns: repeat(2, minmax(160px, 1fr));
 		column-gap: 10px;
+		row-gap: 10px;
 	}
 
 	.task-description-date {
@@ -715,6 +724,7 @@ a > div {
 
 	.tasks-form > label > .form-text-input {
 		min-width: auto;
+		width: 240px;
 		padding: 10px;
 		margin: 10px 0;
 	}
@@ -737,3 +747,12 @@ a > div {
 	}
 
 }
+
+@media only screen and (max-width: 575px) {
+
+	.topper-search-bar {
+		width: 300px;
+	}
+
+}
+
