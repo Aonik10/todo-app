@@ -28,7 +28,7 @@ function TaskFilter() {
             <header>TO-DO LIST</header>
             <button
                 onClick={() => dispatch(openForm())}
-                className="add-new-task-btn"
+                className="add-new-task-btn filter-btn"
             >
                 Add new task
             </button>

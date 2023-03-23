@@ -102,11 +102,14 @@ a > div {
 
 .add-new-task-btn {
 	height: 50px;
-	margin: 25px 20px;
 	border-radius: 10px;
 	background-color: var(--items-color-1);
 	color: var(--font-color-btn);
 	transition: background-color 500ms
+}
+
+.filter-btn {
+	margin: 25px 20px;
 }
 
 .add-new-task-btn:hover {
@@ -585,7 +588,7 @@ a > div {
 		margin-top: 0;
 		position: relative;
 		cursor: pointer;
-		z-index: 1;
+		z-index: 0;
 	}
 
 	.task-resume {
@@ -641,7 +644,7 @@ a > div {
 		font-size: 16px;
 	}
 
-	.task-card-description-grid, .task-card-date {
+	.task-card-description-grid, .task-card-description-list, .task-card-date {
 		font-size: 14px;
 	}
 
@@ -656,16 +659,16 @@ a > div {
 	}
 
 	.task-card {
-		min-width: 180px;
+		min-width: 130px;
 	}
 
 	.all-task-cards-grid {
-		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-		column-gap: 20px;
+		grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+		column-gap: 10px;
 	}
 
 	.task-description-date {
-		min-width: 170px;
+		min-width: 130px;
 	}
 
 	.btn-status {
@@ -692,6 +695,45 @@ a > div {
 
 	.list-add {
 		height: 91px;
+	}
+
+	.modal-section {
+		max-width: 300px;
+	}
+
+	.modal-topper > h1, .modal-topper > button {
+		font-size: 16px;
+	}
+
+	.flex-column-label {
+		font-size: 14px;
+	}
+
+	.tasks-form {
+		margin: 20px
+	}
+
+	.tasks-form > label > .form-text-input {
+		min-width: auto;
+		padding: 10px;
+		margin: 10px 0;
+	}
+
+	.tasks-form > label > input {
+		height: 20px;
+	}
+
+	.form-text-input::-webkit-input-placeholder {
+		font-size: 14px;
+	}
+
+	.tasks-form > label > textarea {
+		height: 80px;
+		max-height: 120px;
+	}
+
+	.form-btn {
+		width: 260px;
 	}
 
 }
