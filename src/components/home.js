@@ -139,7 +139,6 @@ function Home() {
             </header>
             <section className="tasks-section">
                 <h1 className="tasks-section-title">
-                    {console.log(location)}
                     {(location === "" ? "All" : location) +
                         " tasks " +
                         tasks.length}
